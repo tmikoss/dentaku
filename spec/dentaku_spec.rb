@@ -25,4 +25,8 @@ describe Dentaku do
       Dentaku('true AND')
     }.to raise_error(Dentaku::ParseError)
   end
+
+  it 'evaluates an expression containing what appears to be dates' do
+    expect(Dentaku('2*40-40-40')).to eql(-80)
+  end
 end
